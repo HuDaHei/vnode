@@ -43,9 +43,9 @@ export class TransformReallyDom {
   // 将虚拟dom转化为真实dom
   createReallyDom() {
     // 获取容器id
-    this.content = document.querySelector(`#${this.id}`);
     this.virtualNode.forEach(node => {
-      this.content.appendChild(this.distinguishCreateDom(node));
+      this.content = this.distinguishCreateDom(node);
     })
+    return this.content;
   }
 }

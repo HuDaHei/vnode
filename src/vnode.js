@@ -63,13 +63,8 @@ export class VirtualDoms {
   }
   // 开始转化
   startVirturalDom() {
-    const childrenList = this.node.childNodes;
-    childrenList.forEach(node => {
-      const newNode= this.distinguishDom(node)
-      if(Boolean(newNode)) {
-        this.vdom.push(newNode)
-      }
-    })
+    const newNode= this.distinguishDom(this.node)
+    this.vdom.push(newNode)
     return this.vdom
   }
 }
