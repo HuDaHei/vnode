@@ -12,11 +12,15 @@ const record = new MouseEventsRecord({content:document})
 record.start()
 console.log(virtrualDom, 'virtrualDom')
 console.log(reallyDom,'reallyDom')
+// window.scrollTo(390,0)
 document.getElementById('play').addEventListener('click', (e)=> {
 
-  const dis = record.distance;
-  console.log(dis)
-  dis.forEach(top => {
-    document.documentElement.scrollTop = top;
+  let dis = JSON.parse(JSON.stringify(record.distance));
+  let newDis = dis.reverse();
+  const tempC = document.getElementById('bbb')
+  console.log(tempC)
+  newDis.forEach(top => {
+    // document.body.scrollTo(top, 0)
+    window.scrollTo(top,0)
   })
 })
